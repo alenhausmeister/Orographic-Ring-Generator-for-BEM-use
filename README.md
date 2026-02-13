@@ -1,4 +1,8 @@
 The Orographic Ring Generator is a tool for calculating horizon obstruction of micro-locations using elevation data from the PVGIS platform, derived from Shuttle Radar Topography Mission (SRTM) datasets with a spatial resolution of 3 arc-seconds (~90 m). Horizon angles are generated through the GRASS GIS horizon module, which evaluates the elevation of surrounding terrain relative to a defined observation point.
+
+
+
+
 A circular terrain influence zone with a 100 m radius is established around each analysis point. This zone is subdivided into 48 evenly spaced azimuthal directions aligned with the solar analysis framework. For each direction, elevation angles are determined by comparing vertical height differences with corresponding horizontal distances to surrounding terrain features. The maximum angle in each direction is selected to represent the effective horizon profile.
 The resulting directional horizon angles are then translated into three-dimensional geometry within Grasshopper. Vertically offset points and vectors are generated to construct polylines that represent individual horizon profiles. These profiles are organized by azimuth and lofted together to form a continuous virtual horizon surface enclosing the analysis point.
 This workflow enables precise modeling of terrain-induced solar obstruction, providing a structured geometric representation that can be integrated into environmental analysis and parametric design processes.
